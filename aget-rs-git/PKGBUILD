@@ -1,0 +1,34 @@
+# Maintainer: Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=aget-rs-git
+pkgver=0.4.1.r1.g1364da0
+pkgrel=1
+pkgdesc='Fast Asynchronous Downloader with Rust'
+arch=('x86_64')
+url='https://github.com/PeterDing/aget-rs'
+license=('Apache-2.0')
+makedepends=('git' 'cargo')
+depends=()
+optdepends=()
+provides=('aget-rs')
+conflicts=()
+source=("git+https://github.com/PeterDing/aget-rs")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "aget-rs"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+#prepare() {
+#}
+
+build() {
+  cd "aget-rs"
+  RUSTUP_TOOLCHAIN=stable cargo build --target-dir=target
+}
+
+package() {
+  cd "aget-rs"
+  install -Dm 755 target/debug/ag -t "${pkgdir}/usr/bin"
+}
