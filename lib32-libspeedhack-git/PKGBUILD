@@ -1,0 +1,29 @@
+pkgname=lib32-libspeedhack-git
+pkgver=r17.d71c1a5
+pkgrel=1
+pkgdesc="A simple dynamic library to slowdown or speedup games on Linux"
+arch=('x86_64')
+url="https://github.com/evg-zhabotinsky/libspeedhack"
+license=('MIT')
+makedepends=('git')
+source=("$pkgname::git+https://github.com/evg-zhabotinsky/libspeedhack.git")
+md5sums=('SKIP')
+pkgver() {
+  cd "$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build(){
+  cd "$srcdir/$pkgname"
+  make 32bit
+}
+
+package(){
+  cd "$srcdir/$pkgname"
+  #mkdir -p "$pkgdir/usr/bin"
+  mkdir -p "$pkgdir/usr/lib32"
+  #install speedhack "$pkgdir/usr/bin"
+  ls
+  cd lib32
+  install libspeedhack.so "$pkgdir/usr/lib32"
+}
