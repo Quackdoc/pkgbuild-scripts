@@ -1,0 +1,35 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 727bebf..0629ad6 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -2035,8 +2035,8 @@ checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
+ 
+ [[package]]
+ name = "relm4-macros"
+-version = "0.4.4"
+-source = "git+https://github.com/AaronErhardt/Relm4#270293286d3482f63d0d7ded5b55586a66216f26"
++version = "0.5.0-beta.1"
++source = "git+https://github.com/Relm4/Relm4#9430e43fc740f37e92f4e98fe2b8aa514598b189"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+diff --git a/Cargo.toml b/Cargo.toml
+index a8c4e10..ceafa14 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -15,7 +15,7 @@ wayland-client = { version = "0.29.4", optional = true }
+ wayland-protocols = { version = "0.29.4", features = [ "client", "unstable_protocols" ], optional = true }
+ x11 = { version = "2.19.1", features = ["xlib"] }
+ libcosmic = { git = "https://github.com/pop-os/libcosmic" }
+-relm4-macros = { git = "https://github.com/AaronErhardt/Relm4" }
++relm4-macros = { git = "https://github.com/Relm4/Relm4" }
+ pop-launcher-service = { git = "https://github.com/wash2/launcher.git" }
+ pop-launcher = { git = "https://github.com/wash2/launcher.git" }
+ serde = "1.0.134"
+diff --git a/rust-toolchain b/rust-toolchain
+index 4d5fde5..91951fd 100644
+--- a/rust-toolchain
++++ b/rust-toolchain
+@@ -1 +1 @@
+-1.60.0
++1.61.0

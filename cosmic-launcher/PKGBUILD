@@ -1,0 +1,39 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-launcher-git
+pkgver=1
+pkgrel=1
+pkgdesc='cosmic'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-launcher.git'
+license=('GPLv3')
+depends=(
+cmake
+)
+makedepends=(
+  cargo
+  just
+  git
+)
+provides=('cosmic')
+source=('git+https://github.com/pop-os/cosmic-launcher.git'
+        'patch.patch'
+)
+
+sha256sums=('SKIP'
+            'SKIP')
+
+prepare(){
+  patch -d cosmic-launcher -Np1 -i "${srcdir}/patch.patch"
+}
+
+build() {
+    cd $srcdir/cosmic-launcher
+    cargo build --release
+
+}
+
+package() {
+  cd $srcdir/cosmic-launcher
+  just rootdir=$pkgdir install
+}
