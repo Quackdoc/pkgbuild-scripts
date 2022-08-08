@@ -1,0 +1,38 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-applibrary-git
+pkgver=1
+pkgrel=1
+pkgdesc='cosmic'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-applibrary.git'
+license=('GPLv3')
+depends=(
+cmake
+)
+makedepends=(
+  cargo
+  git
+)
+provides=('cosmic')
+source=('git+https://github.com/pop-os/cosmic-applibrary.git'
+        'patch.patch'
+)
+
+sha256sums=('SKIP'
+            'SKIP')
+
+prepare(){
+  patch -d cosmic-applibrary -Np1 -i "${srcdir}/patch.patch"
+}
+
+build() {
+    cd $srcdir/cosmic-applibrary
+    cargo build --release
+
+}
+
+package() {
+  cd $srcdir/cosmic-applibrary
+  just rootdir=$pkgdir install
+}
