@@ -1,0 +1,32 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-applet-host-git
+pkgver=1
+pkgrel=1
+pkgdesc='cosmic'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-applet-host.git'
+license=('GPLv3')
+depends=(
+cmake
+)
+makedepends=(
+  cargo
+  git
+)
+provides=('cosmic')
+source=('git+https://github.com/pop-os/cosmic-applet-host.git'
+)
+
+sha256sums=('SKIP')
+
+build() {
+    cd $srcdir/cosmic-applet-host
+    cargo build --release
+
+}
+
+package() {
+  cd $srcdir/cosmic-applet-host
+  make DESTDIR="$pkgdir/" prefix="/usr" install
+}
