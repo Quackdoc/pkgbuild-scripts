@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-panel-git
-pkgver=1
+pkgver=r167.dedf091
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
@@ -19,6 +19,11 @@ source=('git+https://github.com/pop-os/cosmic-panel.git'
 )
 
 sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-panel"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 build() {
     cd $srcdir/cosmic-panel
