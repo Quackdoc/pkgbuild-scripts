@@ -20,6 +20,11 @@ source=('git+https://github.com/pop-os/cosmic-comp.git'
 
 sha256sums=('SKIP')
 
+pkgver() {
+  cd "$srcdir/cosmic-comp"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
 build() {
     cd $srcdir/cosmic-comp
     cargo build
