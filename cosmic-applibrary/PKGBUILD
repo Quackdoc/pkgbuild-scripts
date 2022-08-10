@@ -13,17 +13,18 @@ cmake
 makedepends=(
   cargo
   git
+  just
 )
 provides=('cosmic')
 source=('git+https://github.com/pop-os/cosmic-applibrary.git'
-        'patch.patch'
 )
 
 sha256sums=('SKIP'
-            'SKIP')
+	    )
 
-prepare(){
-  patch -d cosmic-applibrary -Np1 -i "${srcdir}/patch.patch"
+pkgver() {
+  cd "$srcdir/cosmic-applibrary"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
