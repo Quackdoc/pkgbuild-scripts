@@ -17,14 +17,15 @@ makedepends=(
 )
 provides=('cosmic')
 source=('git+https://github.com/pop-os/cosmic-launcher.git'
-        'patch.patch'
 )
 
 sha256sums=('SKIP'
-            'SKIP')
 
-prepare(){
-  patch -d cosmic-launcher -Np1 -i "${srcdir}/patch.patch"
+)
+
+pkgver() {
+  cd "$srcdir/cosmic-launcher"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
