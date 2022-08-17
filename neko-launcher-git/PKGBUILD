@@ -3,7 +3,7 @@
 pkgname=neko_launcher_neo
 pkgver=2.2.5.r82.g8ed5b51
 pkgrel=1
-pkgdesc='Booru Viewer'
+pkgdesc='A game launcher for visual novels and more'
 arch=('x86_64')
 url='https://github.com/Neko-Services/neko_launcher_neo'
 license=('AGPL-3.0')
