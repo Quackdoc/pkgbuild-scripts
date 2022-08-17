@@ -1,0 +1,41 @@
+# Maintainer: Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=neko_launcher_neo
+pkgver=2.2.5.r82.g8ed5b51
+pkgrel=1
+pkgdesc='Booru Viewer'
+arch=('x86_64')
+url='https://github.com/Neko-Services/neko_launcher_neo'
+license=('AGPL-3.0')
+makedepends=('git')
+depends=('flutter' 'vlc')
+optdepends=()
+provides=('neko_launcher_neo')
+conflicts=()
+
+source=("git+https://github.com/Neko-Services/neko_launcher_neo")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "neko_launcher_neo"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+flutter doctor
+}
+
+build() {
+  cd "neko_launcher_neo"
+  flutter build linux
+}
+
+package() {
+  cd "neko_launcher_neo"
+  mkdir -p "${pkgdir}/usr/share/neko_launcher_neo"
+  mkdir -p "${pkgdir}/usr/bin"
+
+  cp -fr build/linux/x64/release/bundle/* "${pkgdir}/usr/share/neko_launcher_neo"
+  ln -sr "${pkgdir}/usr/share/neko_launcher_neo/neko_launcher_neo" "${pkgdir}/usr/bin/neko_launcher_neo"
+  chmod 755 "${pkgdir}/usr/bin/neko_launcher_neo"
+}
