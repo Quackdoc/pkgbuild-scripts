@@ -28,7 +28,7 @@ prepare() {
     flutter config --enable-linux-desktop
 
     # Get dependencies
-    cd "JHenTai"
+    cd "neko_launcher_neo"
     flutter clean
     flutter pub get
 }
