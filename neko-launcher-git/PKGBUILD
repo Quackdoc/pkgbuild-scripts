@@ -22,7 +22,15 @@ pkgver() {
 }
 
 prepare() {
-flutter doctor
+
+    # Enable desktop build
+    flutter channel stable
+    flutter config --enable-linux-desktop
+
+    # Get dependencies
+    cd "JHenTai"
+    flutter clean
+    flutter pub get
 }
 
 build() {
