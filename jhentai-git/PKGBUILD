@@ -1,0 +1,48 @@
+# Maintainer: Mitchel Stewart <quackdocttech@gmail.com>
+
+pkgname=jhentai-git
+pkgver=v3.1.0+63.r3.gb32fff3
+pkgrel=1
+pkgdesc='A cross-platform app made for e-hentai & exhentai by Flutter '
+arch=('x86_64')
+url='https://github.com/jiangtian616/JHenTai.git'
+license=('Apache-2.0')
+makedepends=('git')
+depends=('flutter')
+optdepends=()
+provides=('jhentai')
+conflicts=()
+source=("git+https://github.com/jiangtian616/JHenTai.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "JHenTai"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+
+    # Enable desktop build
+    flutter channel stable
+    flutter config --enable-linux-desktop
+
+    # Get dependencies
+    cd "JHenTai"
+    flutter clean
+    flutter pub get
+}
+
+build() {
+  cd "JHenTai"
+  flutter build linux --release -t lib/src/main.dart
+}
+
+package() {
+  cd "JHenTai"
+  mkdir -p "${pkgdir}/usr/share/jhentai"
+  mkdir -p "${pkgdir}/usr/bin"
+
+  cp -fr build/linux/x64/release/bundle/* "${pkgdir}/usr/share/jhentai"
+  ln -sr "${pkgdir}/usr/share/jhentai/jhentai" "${pkgdir}/usr/bin/jhentai"
+  chmod 755 "${pkgdir}/usr/bin/jhentai"
+}
