@@ -23,7 +23,7 @@ pkgver() {
 prepare() {
 
     # Enable desktop build
-    flutter channel stable
+    flutter channel beta
     flutter config --enable-linux-desktop
 
     # Get dependencies
