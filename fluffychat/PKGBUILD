@@ -1,0 +1,53 @@
+# Maintainer: Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=fluffychat-git
+pkgver=v1.8.0.r1.g09a74bf3
+pkgrel=1
+pkgdesc='FluffyChat is an open source, nonprofit and cute matrix messenger app.'
+arch=('x86_64')
+url='https://fluffychat.im/'
+license=('Apache-2.0')
+makedepends=('git')
+depends=('flutter')
+optdepends=()
+provides=('fluffychat')
+conflicts=()
+source=("git+https://gitlab.com/famedly/fluffychat.git"
+        "fluffychat.desktop")
+sha256sums=('SKIP'
+            '1612f70a6b324def93b67463b39bd13b3f27d188e4bfdddd4aa88a79f3040ddd')
+
+pkgver() {
+  cd "fluffychat"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+
+    # Enable desktop build
+    #flutter channel stable
+    #flutter config --enable-linux-desktop
+
+    # Get dependencies
+    cd "fluffychat"
+    flutter clean
+    flutter pub get
+}
+
+build() {
+  cd "fluffychat"
+  flutter build linux --release
+}
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/applications/"
+  cp fluffychat.desktop "${pkgdir}/usr/share/applications/"
+
+  cd "fluffychat"
+  mkdir -p "${pkgdir}/usr/share/fluffychat"
+  mkdir -p "${pkgdir}/usr/bin"
+
+  cp -fr build/linux/x64/release/bundle/* "${pkgdir}/usr/share/fluffychat"
+  ln -sr "${pkgdir}/usr/share/fluffychat/fluffychat" "${pkgdir}/usr/bin/fluffychat"
+  chmod 755 "${pkgdir}/usr/bin/fluffychat"
+}
