@@ -1,7 +1,7 @@
 # Maintainer: Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=jhentai-git
-pkgver=v3.1.0+63.r3.gb32fff3
+pkgver=v5.1.5+96.r0.g128d1a3
 pkgrel=1
 pkgdesc='A cross-platform app made for e-hentai & exhentai by Flutter '
 arch=('x86_64')
@@ -23,8 +23,8 @@ pkgver() {
 prepare() {
 
     # Enable desktop build
-    flutter channel beta
-    flutter config --enable-linux-desktop
+   # flutter channel stable
+    #flutter config --enable-linux-desktop
 
     # Get dependencies
     cd "JHenTai"

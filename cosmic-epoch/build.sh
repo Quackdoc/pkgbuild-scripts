@@ -1,0 +1,41 @@
+#!/bin/bash
+
+cd cosmic-applet-host
+paru -Ui
+cd ../
+cd cosmic-applets
+paru -Ui
+cd ../
+cd cosmic-applibrary
+paru -Ui
+cd ../
+cd cosmic-bg
+paru -Ui
+cd ../
+cd cosmic-comp
+paru -Ui
+cd ../
+cd cosmic-launcher
+paru -Ui
+cd ../
+cd cosmic-osd
+paru -Ui
+cd ../
+cd cosmic-panel
+paru -Ui
+cd ../
+cd cosmic-session
+paru -Ui
+cd ../
+#cd iced-workspaces-applet
+#paru -Ui
+#cd ../
+#cd user-color-editor
+#paru -Ui
+#cd ../
+cd cosmic-settings-daemon
+paru -Ui
+cd ../
+cd xdg-desktop-portal-cosmic
+paru -Ui
+

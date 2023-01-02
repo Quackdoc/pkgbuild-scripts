@@ -1,0 +1,49 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-bg-git
+pkgver=r22.086eb12
+pkgrel=1
+pkgdesc='cosmic'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-bg.git'
+license=('GPLv3')
+depends=(
+cmake
+)
+makedepends=(
+  cargo
+  git
+)
+provides=('cosmic')
+source=('git+https://github.com/pop-os/cosmic-bg.git'
+)
+
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-bg"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cd $srcdir/cosmic-bg
+
+}
+
+build() {
+    cd $srcdir/cosmic-bg
+    mkdir -p build
+    meson setup _build \
+      --prefix=/usr \
+      -Dvendor=false
+
+    meson configure _build
+
+    meson compile -C _build
+
+}
+
+package() {
+  cd $srcdir/cosmic-bg
+  meson install -C _build --destdir="$pkgdir"
+}
