@@ -1,0 +1,37 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-workspaces-epoch-git
+pkgver=r48.8bc6e66
+pkgrel=1
+pkgdesc='cosmic'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-workspaces-epoch'
+license=('GPLv3')
+depends=(
+cmake
+)
+makedepends=(
+  cargo
+  git
+)
+provides=('cosmic')
+source=('git+https://github.com/pop-os/cosmic-workspaces-epoch.git'
+)
+
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-workspaces-epoch"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-workspaces-epoch
+    cargo build --release
+
+}
+
+package() {
+  cd $srcdir/cosmic-workspaces-epoch
+  install -Dm 755 target/release/cosmic-workspaces -t "${pkgdir}/usr/bin"
+}

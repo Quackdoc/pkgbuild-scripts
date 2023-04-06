@@ -27,11 +27,11 @@ pkgver() {
 
 build() {
     cd $srcdir/cosmic-comp
-    cargo build
+    cargo build --release
 
 }
 
 package() {
   cd $srcdir/cosmic-comp
-  install -Dm 755 target/debug/cosmic-comp -t "${pkgdir}/usr/bin"
+  install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
 }

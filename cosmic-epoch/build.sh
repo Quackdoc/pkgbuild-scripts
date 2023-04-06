@@ -24,6 +24,9 @@ cd ../
 cd cosmic-panel
 paru -Ui
 cd ../
+cd cosmic-workspaces-epoch
+paru -Ui
+cd ../
 cd cosmic-session
 paru -Ui
 cd ../
