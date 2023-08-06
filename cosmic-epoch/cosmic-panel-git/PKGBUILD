@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-panel-git
-pkgver=r167.dedf091
+pkgver=r297.edfd24e
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
@@ -33,5 +33,5 @@ build() {
 
 package() {
   cd $srcdir/cosmic-panel
-  make DESTDIR="$pkgdir" prefix="/usr" install
+  just rootdir=$pkgdir install
 }

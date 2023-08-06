@@ -1,14 +1,14 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-bg-git
-pkgver=r22.086eb12
+pkgver=r66.749f3ea
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-bg.git'
 license=('GPLv3')
 depends=()
-makedepends=('cargo' git' 'cmake')
+makedepends=('cargo' 'git' 'cmake')
 provides=('cosmic-bg')
 conflicts=('cosmic-bg')
 source=('git+https://github.com/pop-os/cosmic-bg.git'
@@ -22,19 +22,15 @@ pkgver() {
 
 prepare() {
     cd $srcdir/cosmic-bg
+    mkdir -p _build
 }
 
 build() {
     cd $srcdir/cosmic-bg
-    mkdir -p build
-    meson setup _build \
-      --prefix=/usr \
-      -Dvendor=false
-    meson configure _build
-    meson compile -C _build
+    cargo build --release
 }
 
 package() {
   cd $srcdir/cosmic-bg
-  meson install -C _build --destdir="$pkgdir"
+  just rootdir=$pkgdir install
 }

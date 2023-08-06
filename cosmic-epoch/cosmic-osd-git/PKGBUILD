@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-osd-git
-pkgver=r21.a867331
+pkgver=r51.11b0d16
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')

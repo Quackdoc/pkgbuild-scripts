@@ -1,14 +1,16 @@
 pkgbase = cosmic-comp-git
 	pkgdesc = cosmic
-	pkgver = r449.8f6ad62
+	pkgver = r549.bdcb803
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-comp
 	arch = x86_64
 	license = GPLv3
 	makedepends = cargo
 	makedepends = git
-	depends = cmake
-	provides = cosmic
+	makedepends = cmake
+	provides = cosmic-comp
+	conflicts = cosmic-comp
+	backup = etc/cosmic-comp/config.ron
 	source = git+https://github.com/pop-os/cosmic-comp.git
 	sha256sums = SKIP
 

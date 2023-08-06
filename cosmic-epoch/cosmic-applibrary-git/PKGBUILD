@@ -1,14 +1,14 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-applibrary-git
-pkgver=r97.514c155
+pkgver=r124.8d873e5
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applibrary.git'
 license=('GPLv3')
 depends=()
-makedepends=('cargo' git' 'cmake' 'just')
+makedepends=('cargo' 'git' 'cmake' 'just')
 provides=('cosmic-applibrary')
 conflicts=('cosmic-applibrary')
 source=('git+https://github.com/pop-os/cosmic-applibrary.git'

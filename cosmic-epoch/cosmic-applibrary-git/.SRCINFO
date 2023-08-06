@@ -7,9 +7,10 @@ pkgbase = cosmic-applibrary-git
 	license = GPLv3
 	makedepends = cargo
 	makedepends = git
+	makedepends = cmake
 	makedepends = just
-	depends = cmake
-	provides = cosmic
+	provides = cosmic-applibrary
+	conflicts = cosmic-applibrary
 	source = git+https://github.com/pop-os/cosmic-applibrary.git
 	sha256sums = SKIP
 

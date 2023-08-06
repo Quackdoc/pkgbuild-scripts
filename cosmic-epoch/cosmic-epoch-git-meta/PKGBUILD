@@ -1,4 +1,4 @@
-pkgname=cosmic-workspaces-epoch-git
+pkgname=cosmic-epoch-git-meta
 pkgver=0.0.1
 pkgrel=1
 arch=('any')
@@ -19,10 +19,10 @@ depends=(
 'xdg-desktop-portal-cosmic-git')
 
 provides=("cosmic-epoch")
-conflicts=("cosmic-epoch")
+conflicts=("cosmic-epoch" "cosmic-epoch-git")
 
-source=('git+https://github.com/pop-os/cosmic-epoch.git'
-)
+#source=('git+https://github.com/pop-os/cosmic-epoch.git'
+#)
 
 backup=('etc/cosmic-comp/config.ron'
         'etc/cosmic-panel/config.ron')

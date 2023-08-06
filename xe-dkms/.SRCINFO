@@ -1,0 +1,18 @@
+pkgbase = linux-xe-git
+	pkgdesc = Intel XE
+	pkgver = 6.3.1
+	pkgrel = 1
+	url = https://gitlab.freedesktop.org/drm/xe/kernel
+	install = linux-xe-git.install
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	depends = dkms
+	source = git+https://gitlab.freedesktop.org/drm/xe/kernel.git
+	source = dkms.conf
+	source = Makefile
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = linux-xe-git

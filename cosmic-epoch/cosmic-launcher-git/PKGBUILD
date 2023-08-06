@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-launcher-git
-pkgver=r94.ca8d46d
+pkgver=r131.92ee571
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
@@ -28,6 +28,7 @@ pkgver() {
 }
 
 build() {
+    export RUSTFLAGS="$RUSTFLAGS --cfg tokio_unstable"
     cd $srcdir/cosmic-launcher
     cargo build --release
 
