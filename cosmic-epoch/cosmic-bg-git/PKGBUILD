@@ -7,17 +7,12 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-bg.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' git' 'cmake')
+provides=('cosmic-bg')
+conflicts=('cosmic-bg')
 source=('git+https://github.com/pop-os/cosmic-bg.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -27,7 +22,6 @@ pkgver() {
 
 prepare() {
     cd $srcdir/cosmic-bg
-
 }
 
 build() {
@@ -36,11 +30,8 @@ build() {
     meson setup _build \
       --prefix=/usr \
       -Dvendor=false
-
     meson configure _build
-
     meson compile -C _build
-
 }
 
 package() {

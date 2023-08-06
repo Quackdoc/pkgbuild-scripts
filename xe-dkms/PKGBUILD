@@ -1,0 +1,35 @@
+#Maintainer Mitchel Stewart <quackdoctech@gmail.com>
+
+_srcname=linux-6.3.1
+pkgname=linux-xe-git
+pkgver=6.3.1
+pkgrel=1
+pkgdesc=" Intel XE"
+arch=('i686' 'x86_64')
+url="https://gitlab.freedesktop.org/drm/xe/kernel"
+license=('GPL2')
+depends=('dkms')
+install=${pkgname}.install
+source=("git+https://gitlab.freedesktop.org/drm/xe/kernel.git"
+        'dkms.conf'
+        'Makefile'
+       )
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP')
+
+package() {
+
+  # Copy Makefile and dkms.conf
+  install -Dm644 Makefile "${pkgdir}"/usr/src/${pkgname}-${pkgver}/Makefile
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${pkgname}-${pkgver}/dkms.conf
+
+  # Set name and version
+  sed -e "s/@PKGNAME@/${pkgname}/" \
+      -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${pkgname}-${pkgver}/dkms.conf
+
+  #copy source
+  mkdir -p "${pkgdir}/usr/src/${pkgname}-${pkgver}/drivers/gpu/"
+  cp -r "${srcdir}/${_srcname}/drivers/gpu/drm/xe" "${pkgdir}/usr/src/${pkgname}-${pkgver}/drivers/gpu/drm/xe"
+}

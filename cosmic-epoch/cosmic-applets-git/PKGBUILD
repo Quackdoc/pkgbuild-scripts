@@ -1,23 +1,18 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-applets-git
-pkgver=r283.d03966a
+pkgver=r455.8b46cc2
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applets.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' git' 'cmake')
+provides=('cosmic-applets')
+conflicts=('cosmic-applets')
 source=('git+https://github.com/pop-os/cosmic-applets.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {

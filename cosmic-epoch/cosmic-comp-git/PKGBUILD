@@ -1,37 +1,33 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-comp-git
-pkgver=1
+pkgver=r549.bdcb803
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-comp'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'git' 'cmake')
+provides=('cosmic-comp')
+conflicts=('cosmic-comp')
 source=('git+https://github.com/pop-os/cosmic-comp.git'
 )
-
 sha256sums=('SKIP')
-
-pkgver() {
+backup=('etc/cosmic-comp/config.ron')
+  
+  
+pkgver(){
   cd "$srcdir/cosmic-comp"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
-build() {
+build(){
     cd $srcdir/cosmic-comp
     cargo build --release
-
 }
 
-package() {
+package(){
   cd $srcdir/cosmic-comp
   install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
 }

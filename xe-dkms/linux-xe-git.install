@@ -1,0 +1,7 @@
+post_install() {
+  echo 'The xe kernel module will be available on reboot.'
+}
+
+post_remove() {
+  echo 'The xe kernel module will be removed on reboot.'
+}

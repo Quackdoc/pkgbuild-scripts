@@ -1,0 +1,33 @@
+pkgname=cosmic-workspaces-epoch-git
+pkgver=0.0.1
+pkgrel=1
+arch=('any')
+url="https://github.com/pop-os/cosmic-epoch"
+license=('custom:unknown')
+depends=(
+'cosmic-applets-git'
+'cosmic-applibrary-git'
+'cosmic-bg-git'
+'cosmic-comp-git'
+'cosmic-launcher-git'
+'cosmic-osd-git'
+'cosmic-panel-git'
+'cosmic-session-git'
+'cosmic-settings-git'
+'cosmic-settings-daemon-git'
+'cosmic-workspaces-epoch-git'
+'xdg-desktop-portal-cosmic-git')
+
+provides=("cosmic-epoch")
+conflicts=("cosmic-epoch")
+
+source=('git+https://github.com/pop-os/cosmic-epoch.git'
+)
+
+backup=('etc/cosmic-comp/config.ron'
+        'etc/cosmic-panel/config.ron')
+
+pkgver() {
+  date +%Y%m%d%H%M
+}
+

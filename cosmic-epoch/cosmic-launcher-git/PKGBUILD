@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-launcher-git
-pkgver=1
+pkgver=r94.ca8d46d
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
@@ -20,7 +20,6 @@ source=('git+https://github.com/pop-os/cosmic-launcher.git'
 )
 
 sha256sums=('SKIP'
-
 )
 
 pkgver() {
