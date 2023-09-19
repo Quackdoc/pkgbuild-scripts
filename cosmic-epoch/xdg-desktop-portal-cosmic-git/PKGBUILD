@@ -1,11 +1,11 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
-pkgname=cosmic-panel-git
-pkgver=r314.bca0a7c
+pkgname=xdg-desktop-portal-cosmic-git
+pkgver=r53.04cc83b
 pkgrel=1
 pkgdesc='cosmic'
 arch=('x86_64')
-url='https://github.com/pop-os/cosmic-panel.git'
+url='https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 license=('GPLv3')
 depends=(
 cmake
@@ -15,23 +15,23 @@ makedepends=(
   git
 )
 provides=('cosmic')
-source=('git+https://github.com/pop-os/cosmic-panel.git'
+source=('git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 )
 
 sha256sums=('SKIP')
 
 pkgver() {
-  cd "$srcdir/cosmic-panel"
+  cd "$srcdir/xdg-desktop-portal-cosmic"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-    cd $srcdir/cosmic-panel
+    cd $srcdir/xdg-desktop-portal-cosmic
     cargo build --release
 
 }
 
 package() {
-  cd $srcdir/cosmic-panel
-  just rootdir=$pkgdir install
+  cd $srcdir/xdg-desktop-portal-cosmic
+  make DESTDIR="$pkgdir/" prefix="/usr" install
 }

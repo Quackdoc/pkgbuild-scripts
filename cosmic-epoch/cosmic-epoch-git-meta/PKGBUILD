@@ -1,5 +1,5 @@
 pkgname=cosmic-epoch-git-meta
-pkgver=0.0.1
+pkgver=202309191721
 pkgrel=1
 arch=('any')
 url="https://github.com/pop-os/cosmic-epoch"
@@ -14,6 +14,7 @@ depends=(
 'cosmic-panel-git'
 'cosmic-session-git'
 'cosmic-settings-git'
+'cosmic-notifications-git'
 'cosmic-settings-daemon-git'
 'cosmic-workspaces-epoch-git'
 'xdg-desktop-portal-cosmic-git')
