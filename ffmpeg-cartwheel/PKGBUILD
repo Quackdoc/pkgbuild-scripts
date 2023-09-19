@@ -3,7 +3,7 @@
 # Contributor: richteer <richteer at lastprime.net>
 # Contributor: DrZaius <lou at fakeoutdoorsman.com>
 
-pkgname=ffmpeg-git
+pkgname=ffmpeg-cartwheel-git
 pkgver=5.2.r108760.g119918de6f
 pkgrel=1
 pkgdesc='Complete solution to record, convert and stream audio and video (git version)'
