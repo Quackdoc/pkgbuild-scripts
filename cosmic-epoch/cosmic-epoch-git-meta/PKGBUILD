@@ -17,6 +17,7 @@ depends=(
 'cosmic-notifications-git'
 'cosmic-settings-daemon-git'
 'cosmic-workspaces-epoch-git'
+'cosmic-icons-git'
 'xdg-desktop-portal-cosmic-git')
 
 provides=("cosmic-epoch")
