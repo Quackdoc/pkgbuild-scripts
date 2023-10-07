@@ -3,7 +3,7 @@
 pkgname=cosmic-launcher-git
 pkgver=r137.2e1412c
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-launcher'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-launcher.git'
 license=('GPLv3')

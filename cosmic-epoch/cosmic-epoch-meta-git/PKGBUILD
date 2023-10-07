@@ -1,4 +1,4 @@
-pkgname=cosmic-epoch-git-meta
+pkgname=cosmic-epoch-meta-git
 pkgver=202309191721
 pkgrel=1
 arch=('any')
@@ -20,8 +20,8 @@ depends=(
 'cosmic-icons-git'
 'xdg-desktop-portal-cosmic-git')
 
-provides=("cosmic-epoch")
-conflicts=("cosmic-epoch" "cosmic-epoch-git")
+provides=("cosmic-epoch"  "cosmic-epoch-git")
+conflicts=("cosmic-epoch")
 
 #source=('git+https://github.com/pop-os/cosmic-epoch.git'
 #)

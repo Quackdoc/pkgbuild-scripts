@@ -3,7 +3,7 @@
 pkgname=cosmic-applets-git
 pkgver=r510.c67c191
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-applets'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applets.git'
 license=('GPLv3')

@@ -3,7 +3,7 @@
 pkgname=cosmic-osd-git
 pkgver=r51.11b0d16
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-osd'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-osd.git'
 license=('GPLv3')

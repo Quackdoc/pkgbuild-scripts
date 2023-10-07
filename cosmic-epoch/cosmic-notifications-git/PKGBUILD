@@ -3,7 +3,7 @@
 pkgname=cosmic-notifications-git
 pkgver=r34.e42d4a0
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-notifications'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-notifications.git'
 license=('GPLv3')

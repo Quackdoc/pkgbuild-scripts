@@ -3,7 +3,7 @@
 pkgname=cosmic-settings-daemon-git
 pkgver=r12.00cb67f
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-settings-daemon'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-settings-daemon'
 license=('GPLv3')

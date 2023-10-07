@@ -3,7 +3,7 @@
 pkgname=xdg-desktop-portal-cosmic-git
 pkgver=r53.04cc83b
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='xdg-desktop-portal-cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 license=('GPLv3')

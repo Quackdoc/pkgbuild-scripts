@@ -3,7 +3,7 @@
 pkgname=cosmic-workspaces-epoch-git
 pkgver=r59.d8c820b
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-workspaces-epoch'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-workspaces-epoch'
 license=('GPLv3')

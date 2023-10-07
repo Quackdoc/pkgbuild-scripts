@@ -3,7 +3,7 @@
 pkgname=cosmic-comp-git
 pkgver=r669.5cebc7b
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-comp'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-comp'
 license=('GPLv3')

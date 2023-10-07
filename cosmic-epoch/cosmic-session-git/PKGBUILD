@@ -3,7 +3,7 @@
 pkgname=cosmic-session-git
 pkgver=r91.59ddbfc
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-session'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-session.git'
 license=('GPLv3')

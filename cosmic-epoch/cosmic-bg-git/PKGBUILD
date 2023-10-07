@@ -3,7 +3,7 @@
 pkgname=cosmic-bg-git
 pkgver=r66.749f3ea
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-bg'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-bg.git'
 license=('GPLv3')
@@ -18,11 +18,6 @@ sha256sums=('SKIP')
 pkgver() {
   cd "$srcdir/cosmic-bg"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
-
-prepare() {
-    cd $srcdir/cosmic-bg
-    mkdir -p _build
 }
 
 build() {

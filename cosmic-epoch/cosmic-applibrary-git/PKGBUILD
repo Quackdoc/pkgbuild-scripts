@@ -3,7 +3,7 @@
 pkgname=cosmic-applibrary-git
 pkgver=r128.6fb82a5
 pkgrel=1
-pkgdesc='cosmic'
+pkgdesc='cosmic-applibrary'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applibrary.git'
 license=('GPLv3')
