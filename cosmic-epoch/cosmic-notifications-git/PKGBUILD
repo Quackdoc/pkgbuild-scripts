@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-notifications-git
-pkgver=r34.e42d4a0
+pkgver=
 pkgrel=1
 pkgdesc='cosmic-notifications'
 arch=('x86_64')

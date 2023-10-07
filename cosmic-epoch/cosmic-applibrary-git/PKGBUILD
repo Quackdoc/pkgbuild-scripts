@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-applibrary-git
-pkgver=r128.6fb82a5
+pkgver=
 pkgrel=1
 pkgdesc='cosmic-applibrary'
 arch=('x86_64')

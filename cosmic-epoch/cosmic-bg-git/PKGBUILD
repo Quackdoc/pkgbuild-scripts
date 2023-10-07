@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-bg-git
-pkgver=r66.749f3ea
+pkgver=
 pkgrel=1
 pkgdesc='cosmic-bg'
 arch=('x86_64')
