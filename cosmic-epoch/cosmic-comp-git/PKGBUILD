@@ -16,7 +16,6 @@ source=('git+https://github.com/pop-os/cosmic-comp.git'
 sha256sums=('SKIP')
 backup=('etc/cosmic-comp/config.ron')
   
-  
 pkgver(){
   cd "$srcdir/cosmic-comp"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"

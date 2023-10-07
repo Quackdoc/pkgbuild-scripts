@@ -7,17 +7,12 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-workspaces-epoch'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-workspaces-epoch')
+conflicts=('cosmic-workspaces-epoch')
 source=('git+https://github.com/pop-os/cosmic-workspaces-epoch.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -28,7 +23,6 @@ pkgver() {
 build() {
     cd $srcdir/cosmic-workspaces-epoch
     cargo build --release
-
 }
 
 package() {

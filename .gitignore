@@ -18,3 +18,5 @@ lib32-libspeedhack-git/.SRCINFO
 libLC3plus/.SRCINFO
 neko-launcher-git/.SRCINFO
 libLC3plus
+amdgpu-dkms
+amdgpu-main-dkms

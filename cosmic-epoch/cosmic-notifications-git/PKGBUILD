@@ -7,17 +7,12 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-notifications.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-notifications')
+conflicts=('cosmic-notifications')
 source=('git+https://github.com/pop-os/cosmic-notifications.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -28,7 +23,6 @@ pkgver() {
 build() {
     cd $srcdir/cosmic-notifications
     cargo build --release
-
 }
 
 package() {

@@ -7,17 +7,12 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-osd.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-osd')
+conflicts=('cosmic-osd')
 source=('git+https://github.com/pop-os/cosmic-osd.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -28,7 +23,6 @@ pkgver() {
 build() {
     cd $srcdir/cosmic-osd
     cargo build --release
-
 }
 
 package() {

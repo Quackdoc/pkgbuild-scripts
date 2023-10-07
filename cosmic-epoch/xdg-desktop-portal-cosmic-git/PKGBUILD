@@ -7,17 +7,12 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('xdg-desktop-portal-cosmic')
+conflicts=('xdg-desktop-portal-cosmic')
 source=('git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 )
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -28,7 +23,6 @@ pkgver() {
 build() {
     cd $srcdir/xdg-desktop-portal-cosmic
     cargo build --release
-
 }
 
 package() {

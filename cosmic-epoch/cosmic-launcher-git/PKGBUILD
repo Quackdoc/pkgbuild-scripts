@@ -7,20 +7,13 @@ pkgdesc='cosmic'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-launcher.git'
 license=('GPLv3')
-depends=(
-cmake
-)
-makedepends=(
-  cargo
-  just
-  git
-)
-provides=('cosmic')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-launcher')
+conflicts=('cosmic-launcher')
 source=('git+https://github.com/pop-os/cosmic-launcher.git'
 )
-
-sha256sums=('SKIP'
-)
+sha256sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cosmic-launcher"
@@ -31,7 +24,6 @@ build() {
     export RUSTFLAGS="$RUSTFLAGS --cfg tokio_unstable"
     cd $srcdir/cosmic-launcher
     cargo build --release
-
 }
 
 package() {
