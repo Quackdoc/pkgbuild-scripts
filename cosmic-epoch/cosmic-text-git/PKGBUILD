@@ -1,0 +1,33 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-edit-git
+pkgver=r229.07633f5
+pkgrel=1
+pkgdesc='cosmic-edit'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-edit'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'git')
+provides=('cosmic-edit')
+conflicts=('cosmic-edit')
+source=('git+https://github.com/pop-os/cosmic-edit.git'
+)
+sha256sums=('SKIP')
+#backup=('etc/cosmic-edit/config.ron')
+  
+pkgver(){
+  cd "$srcdir/cosmic-edit"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build(){
+    cd $srcdir/cosmic-edit
+    cargo build --release
+}
+
+package(){
+  cd $srcdir/cosmic-edit
+  install -Dm 755 res/com.system76.CosmicEdit.desktop -t "${pkgdir}/usr/share/applications"
+  install -Dm 755 target/release/cosmic-edit -t "${pkgdir}/usr/bin"
+}
