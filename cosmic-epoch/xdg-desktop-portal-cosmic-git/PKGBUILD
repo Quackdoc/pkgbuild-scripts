@@ -27,5 +27,6 @@ build() {
 
 package() {
   cd $srcdir/xdg-desktop-portal-cosmic
-  make DESTDIR="$pkgdir/" prefix="/usr" install
+  just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir/" prefix="/usr" install
 }

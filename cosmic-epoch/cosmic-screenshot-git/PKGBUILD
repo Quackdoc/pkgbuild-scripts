@@ -1,32 +1,32 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
-pkgname=cosmic-osd-git
-pkgver=0.1
+pkgname=cosmic-screenshot-git
+pkgver=r4.b413a71
 pkgrel=1
-pkgdesc='cosmic-osd'
+pkgdesc='cosmic-screenshot'
 arch=('x86_64')
-url='https://github.com/pop-os/cosmic-osd.git'
+url='https://github.com/pop-os/cosmic-screenshot.git'
 license=('GPLv3')
 depends=()
 makedepends=('cargo' 'just' 'git' 'cmake')
-provides=('cosmic-osd')
-conflicts=('cosmic-osd')
-source=('git+https://github.com/pop-os/cosmic-osd.git'
+provides=('cosmic-screenshot')
+conflicts=('cosmic-screenshot')
+source=('git+https://github.com/pop-os/cosmic-screenshot.git'
 )
 sha256sums=('SKIP')
 
 pkgver() {
-  cd "$srcdir/cosmic-osd"
+  cd "$srcdir/cosmic-screenshot"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-    cd $srcdir/cosmic-osd
+    cd $srcdir/cosmic-screenshot
     cargo build --release
 }
 
 package() {
-  cd $srcdir/cosmic-osd
+  cd $srcdir/cosmic-screenshot
   just rootdir=$pkgdir install
   #make DESTDIR="$pkgdir" prefix="/usr" install
 }

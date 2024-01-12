@@ -1,4 +1,4 @@
-#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+#Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-edit-git
 pkgver=r229.07633f5
@@ -28,6 +28,7 @@ build(){
 
 package(){
   cd $srcdir/cosmic-edit
-  install -Dm 755 res/com.system76.CosmicEdit.desktop -t "${pkgdir}/usr/share/applications"
-  install -Dm 755 target/release/cosmic-edit -t "${pkgdir}/usr/bin"
+  just rootdir=$pkgdir install
+  #install -Dm 755 res/com.system76.CosmicEdit.desktop -t "${pkgdir}/usr/share/applications"
+  #install -Dm 755 target/release/cosmic-edit -t "${pkgdir}/usr/bin"
 }

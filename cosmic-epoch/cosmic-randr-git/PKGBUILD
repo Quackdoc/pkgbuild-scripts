@@ -1,0 +1,32 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=cosmic-randr-git
+pkgver=r3.8a08210
+pkgrel=1
+pkgdesc='cosmic-randr'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-randr.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-randr')
+conflicts=('cosmic-randr')
+source=('git+https://github.com/pop-os/cosmic-randr.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-randr"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-randr
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-randr
+  just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}

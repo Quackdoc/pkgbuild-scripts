@@ -1,0 +1,31 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=cosmic-files-git
+pkgver=r53.4674142
+pkgrel=1
+pkgdesc='cosmic-files'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-files.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-files')
+conflicts=('cosmic-files')
+source=('git+https://github.com/pop-os/cosmic-files.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-files"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-files
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-files
+  just rootdir=$pkgdir install
+}

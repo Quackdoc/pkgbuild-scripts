@@ -1,0 +1,39 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-greeter-git
+pkgver=r42.8d91f3c
+pkgrel=1
+pkgdesc='cosmic-greeter'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-greeter.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake' 'makepkg-git-lfs-proto')
+provides=('cosmic-greeter')
+conflicts=('cosmic-greeter')
+source=('git-lfs+https://github.com/pop-os/cosmic-greeter.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-greeter"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+## build with WITH GIT_LFS_SKIP_SMUDGE=1
+## Makepkg doesn't support LFS
+#prepare() {
+#  cd $srcdir/cosmic-greeter
+#  git lfs pull
+#}
+
+build() {
+    cd $srcdir/cosmic-greeter
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-greeter
+  just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}

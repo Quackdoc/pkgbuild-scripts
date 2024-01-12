@@ -28,5 +28,6 @@ build(){
 
 package(){
   cd $srcdir/cosmic-comp
-  install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
+  just rootdir=$pkgdir install
+  #install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
 }

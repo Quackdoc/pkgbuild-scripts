@@ -1,0 +1,32 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
+
+pkgname=cosmic-term-git
+pkgver=r100.679e7ee
+pkgrel=1
+pkgdesc='cosmic-term'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-term.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-term')
+conflicts=('cosmic-term')
+source=('git+https://github.com/pop-os/cosmic-term.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-term"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-term
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-term
+  just rootdir=$pkgdir install
+  #install -Dm 755 target/release/cosmic-term -t "${pkgdir}/usr/bin"
+}
