@@ -1,0 +1,62 @@
+#Maintainer Mitchel Stewart <quackdoctech@gmail.com>
+
+_pkgbase='bcachefs'
+pkgbase="$_pkgbase-git"
+pkgname=("bcachefs-git-dkms")
+pkgver=6.7.0.rc7.r5.gaf21982
+pkgrel=1
+pkgdesc="The COW filesystem for Linux that won't eat your data"
+arch=('any')
+url='https://bcachefs.org/'
+depends=()
+makedepends=()
+optdepends=()
+provides=()
+_nondkms_depends=('linux')
+_dkms_depends=('dkms')
+_nondkms_makedepends=('linux-headers' 'dkms')
+_dkms_optdepends=('linux-headers: build the module for Arch kernel')
+_nondkms_conflicts=("$_pkgbase-git" "$_pkgbase")
+_dkms_conflicts=("$_pkgbase-dkms-git" "$_pkgbase-dkms")
+_module_provides=("BCACHEFS-MODULE=$pkgver")
+license=('GPL2')
+depends=('dkms')
+install=${pkgname}.install
+source=("git+https://github.com/koverstreet/bcachefs.git"
+        'dkms.conf'
+        'Makefile'
+        'pre-build.sh'
+       )
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
+
+pkgver() {
+    local m="$(head "$srcdir/$_pkgbase/Makefile")"
+    local ver="$(echo "$m" | sed -n 's/^VERSION = \(.*\)$/\1/p')"
+    local patchlvl="$(echo "$m" | sed -n 's/^PATCHLEVEL = \(.*\)$/\1/p')"
+    local sublvl="$(echo "$m" | sed -n 's/^SUBLEVEL = \(.*\)$/\1/p')"
+    local extraver="$(echo "$m" | sed -n 's/^EXTRAVERSION = \(.*\)$/\1/p' | sed 's/-//g')"
+    local kernver="${ver}${patchlvl:+.${patchlvl}}${sublvl:+.${sublvl}}${extraver:+.${extraver}}"
+    local commit="$(git -C "$srcdir/$_pkgbase" describe --long --abbrev=7 | sed 's/^.*-\([^-]*-g\)/r\1/;s/-/./g')"
+    printf "%s.%s" "$kernver" "$commit"
+}
+
+package() {
+
+  # Copy Makefile and dkms.conf
+  install -Dm644 Makefile "${pkgdir}"/usr/src/${pkgname}-${pkgver}/Makefile
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${pkgname}-${pkgver}/dkms.conf
+  install -Dm755 pre-build.sh "${pkgdir}"/usr/src/${pkgname}-${pkgver}/pre-build.sh
+
+  # Set name and version
+  sed -e "s/@PKGNAME@/${pkgname}/" \
+      -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${pkgname}-${pkgver}/dkms.conf
+
+  # Copy sources
+  mkdir -p "${pkgdir}/usr/src/${pkgname}-${pkgver}/fs/"
+  cp -r "${srcdir}/${_pkgbase}/fs/bcachefs" "${pkgdir}/usr/src/${pkgname}-${pkgver}/fs/bcachefs"
+
+}
