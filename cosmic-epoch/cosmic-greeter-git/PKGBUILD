@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-greeter-git
-pkgver=r42.8d91f3c
+pkgver=0.1
 pkgrel=1
 pkgdesc='cosmic-greeter'
 arch=('x86_64')

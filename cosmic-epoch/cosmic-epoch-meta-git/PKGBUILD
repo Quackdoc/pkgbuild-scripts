@@ -1,5 +1,5 @@
 pkgname=cosmic-epoch-meta-git
-pkgver=202309191721
+pkgver=0.1
 pkgrel=1
 arch=('any')
 url="https://github.com/pop-os/cosmic-epoch"

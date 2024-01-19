@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-randr-git
-pkgver=r3.8a08210
+pkgver=0.1
 pkgrel=1
 pkgdesc='cosmic-randr'
 arch=('x86_64')
