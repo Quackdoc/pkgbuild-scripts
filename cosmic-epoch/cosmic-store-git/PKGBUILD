@@ -1,0 +1,32 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-store-git
+pkgver=r3.7d63044
+pkgrel=1
+pkgdesc='cosmic-store'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-store.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-store')
+conflicts=('cosmic-store')
+source=('git+https://github.com/pop-os/cosmic-store.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-store"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-store
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-store
+  just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}
