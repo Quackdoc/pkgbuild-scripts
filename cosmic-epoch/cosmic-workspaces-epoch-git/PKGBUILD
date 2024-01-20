@@ -27,6 +27,7 @@ build() {
 
 package() {
   cd $srcdir/cosmic-workspaces-epoch
-  just rootdir=$pkgdir install
-  #install -Dm 755 target/release/cosmic-workspaces -t "${pkgdir}/usr/bin"
+  #just rootdir=$pkgdir install
+  install -Dm 755 target/release/cosmic-workspaces -t "${pkgdir}/usr/bin"
+  install -Dm 655 data/com.system76.CosmicWorkspaces.desktop "$(pkgdir)/usr/share/applications/com.system76.CosmicWorkspaces.desktop"
 }
