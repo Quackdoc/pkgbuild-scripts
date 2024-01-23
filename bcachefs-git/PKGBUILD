@@ -2,7 +2,7 @@
 
 _pkgbase='bcachefs'
 pkgbase="$_pkgbase-git"
-pkgname=("bcachefs-git-dkms")
+pkgname=("bcachefs-dkms-git")
 pkgver=6.7.0.rc7.r5.gaf21982
 pkgrel=1
 pkgdesc="The COW filesystem for Linux that won't eat your data"
@@ -16,7 +16,7 @@ _nondkms_depends=('linux')
 _dkms_depends=('dkms')
 _nondkms_makedepends=('linux-headers' 'dkms')
 _dkms_optdepends=('linux-headers: build the module for Arch kernel')
-_nondkms_conflicts=("$_pkgbase-git" "$_pkgbase")
+_nondkms_conflicts=("$_pkgbase-git" "$_pkgbase" "bcachefs-git-dkms")
 _dkms_conflicts=("$_pkgbase-dkms-git" "$_pkgbase-dkms")
 _module_provides=("BCACHEFS-MODULE=$pkgver")
 license=('GPL2')
