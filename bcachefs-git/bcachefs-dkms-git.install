@@ -2,7 +2,7 @@
 # new version (without -$pkgrel): ${2%%-*}
 
 post_install() {
-    dkms install bcachefs-git-dkms/${1%%-*}
+    dkms install bcachefs-dkms-git/${1%%-*}
 }
 
 pre_upgrade() {
@@ -14,5 +14,5 @@ post_upgrade() {
 }
 
 pre_remove() {
-    dkms remove bcachefs-git-dkms/${1%%-*} --all
+    dkms remove bcachefs-dkms-git/${1%%-*} --all
 }

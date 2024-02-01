@@ -3,7 +3,7 @@
 _pkgbase='bcachefs'
 pkgbase="$_pkgbase-git"
 pkgname=("bcachefs-dkms-git")
-pkgver=6.7.0.rc7.r5.gaf21982
+pkgver=6.7.0.rc7.r44.ge715222
 pkgrel=1
 pkgdesc="The COW filesystem for Linux that won't eat your data"
 arch=('any')
