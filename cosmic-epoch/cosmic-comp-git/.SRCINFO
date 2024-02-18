@@ -1,6 +1,6 @@
 pkgbase = cosmic-comp-git
 	pkgdesc = cosmic-comp
-	pkgver = 0.1
+	pkgver = r897.e74b0df
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-comp
 	arch = x86_64

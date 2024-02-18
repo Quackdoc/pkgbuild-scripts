@@ -1,6 +1,6 @@
 pkgbase = cosmic-screenshot-git
 	pkgdesc = cosmic-screenshot
-	pkgver = 0.1
+	pkgver = r7.98cafde
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-screenshot.git
 	arch = x86_64

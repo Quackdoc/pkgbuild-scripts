@@ -1,6 +1,6 @@
 pkgbase = cosmic-session-git
 	pkgdesc = cosmic-session
-	pkgver = 0.1
+	pkgver = r123.8e73c0f
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-session.git
 	arch = x86_64

@@ -1,6 +1,6 @@
 pkgbase = cosmic-settings-daemon-git
 	pkgdesc = cosmic-settings-daemon
-	pkgver = 0.1
+	pkgver = r21.f7183b6
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-settings-daemon
 	arch = x86_64

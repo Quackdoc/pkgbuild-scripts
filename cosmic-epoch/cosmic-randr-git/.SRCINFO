@@ -1,6 +1,6 @@
 pkgbase = cosmic-randr-git
 	pkgdesc = cosmic-randr
-	pkgver = 0.1
+	pkgver = r15.88c570c
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-randr.git
 	arch = x86_64

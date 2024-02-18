@@ -1,6 +1,6 @@
 pkgbase = cosmic-workspaces-epoch-git
 	pkgdesc = cosmic-workspaces-epoch
-	pkgver = 0.1
+	pkgver = r161.7e81c9c
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-workspaces-epoch
 	arch = x86_64

@@ -1,6 +1,6 @@
 pkgbase = cosmic-launcher-git
 	pkgdesc = cosmic-launcher
-	pkgver = 0.1
+	pkgver = r179.fa00cf1
 	pkgrel = 1
 	url = https://github.com/pop-os/cosmic-launcher.git
 	arch = x86_64
