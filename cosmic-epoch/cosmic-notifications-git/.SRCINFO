@@ -1,0 +1,17 @@
+pkgbase = cosmic-notifications-git
+	pkgdesc = cosmic-notifications
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-notifications.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-notifications
+	conflicts = cosmic-notifications
+	source = git+https://github.com/pop-os/cosmic-notifications.git
+	sha256sums = SKIP
+
+pkgname = cosmic-notifications-git

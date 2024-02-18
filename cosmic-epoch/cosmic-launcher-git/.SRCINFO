@@ -1,0 +1,17 @@
+pkgbase = cosmic-launcher-git
+	pkgdesc = cosmic-launcher
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-launcher.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-launcher
+	conflicts = cosmic-launcher
+	source = git+https://github.com/pop-os/cosmic-launcher.git
+	sha256sums = SKIP
+
+pkgname = cosmic-launcher-git

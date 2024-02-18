@@ -1,0 +1,17 @@
+pkgbase = cosmic-workspaces-epoch-git
+	pkgdesc = cosmic-workspaces-epoch
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-workspaces-epoch
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-workspaces-epoch
+	conflicts = cosmic-workspaces-epoch
+	source = git+https://github.com/pop-os/cosmic-workspaces-epoch.git
+	sha256sums = SKIP
+
+pkgname = cosmic-workspaces-epoch-git

@@ -1,0 +1,15 @@
+pkgbase = cosmic-edit-git
+	pkgdesc = cosmic-edit
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-edit
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = git
+	provides = cosmic-edit
+	conflicts = cosmic-edit
+	source = git+https://github.com/pop-os/cosmic-edit.git
+	sha256sums = SKIP
+
+pkgname = cosmic-edit-git

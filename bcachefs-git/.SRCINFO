@@ -1,0 +1,19 @@
+pkgbase = bcachefs-git
+	pkgdesc = The COW filesystem for Linux that won't eat your data
+	pkgver = 6.7.0.rc7.r44.ge715222
+	pkgrel = 1
+	url = https://bcachefs.org/
+	install = bcachefs-dkms-git.install
+	arch = any
+	license = GPL2
+	depends = dkms
+	source = git+https://github.com/koverstreet/bcachefs.git
+	source = dkms.conf
+	source = Makefile
+	source = pre-build.sh
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = bcachefs-dkms-git

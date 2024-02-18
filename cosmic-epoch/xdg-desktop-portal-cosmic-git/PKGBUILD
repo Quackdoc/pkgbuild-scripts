@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=xdg-desktop-portal-cosmic-git
-pkgver=0.1
+pkgver=r106.0ca1863
 pkgrel=1
 pkgdesc='xdg-desktop-portal-cosmic'
 arch=('x86_64')

@@ -1,0 +1,20 @@
+pkgbase = cosmic-store-git
+	pkgdesc = cosmic-store
+	pkgver = r23.fc1dd57
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-store.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	makedepends = appstream
+	provides = cosmic-store
+	conflicts = cosmic-store
+	source = git+https://github.com/pop-os/cosmic-store.git
+	source = git+https://github.com/jackpot51/appstream.git
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = cosmic-store-git

@@ -1,0 +1,17 @@
+pkgbase = xdg-desktop-portal-cosmic-git
+	pkgdesc = xdg-desktop-portal-cosmic
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/xdg-desktop-portal-cosmic.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = xdg-desktop-portal-cosmic
+	conflicts = xdg-desktop-portal-cosmic
+	source = git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git
+	sha256sums = SKIP
+
+pkgname = xdg-desktop-portal-cosmic-git

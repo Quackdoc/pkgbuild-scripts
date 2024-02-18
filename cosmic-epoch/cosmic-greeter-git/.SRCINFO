@@ -1,0 +1,18 @@
+pkgbase = cosmic-greeter-git
+	pkgdesc = cosmic-greeter
+	pkgver = r63.0320635
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-greeter.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	makedepends = makepkg-git-lfs-proto
+	provides = cosmic-greeter
+	conflicts = cosmic-greeter
+	source = git-lfs+https://github.com/pop-os/cosmic-greeter.git
+	sha256sums = SKIP
+
+pkgname = cosmic-greeter-git

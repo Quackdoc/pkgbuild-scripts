@@ -1,0 +1,17 @@
+pkgbase = cosmic-applets-git
+	pkgdesc = cosmic-applets
+	pkgver = r733.34c4bad
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-applets.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = git
+	makedepends = cmake
+	makedepends = just
+	provides = cosmic-applets
+	conflicts = cosmic-applets
+	source = git+https://github.com/pop-os/cosmic-applets.git
+	sha256sums = SKIP
+
+pkgname = cosmic-applets-git

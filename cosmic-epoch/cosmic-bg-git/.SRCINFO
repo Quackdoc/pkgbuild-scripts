@@ -1,0 +1,16 @@
+pkgbase = cosmic-bg-git
+	pkgdesc = cosmic-bg
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-bg.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-bg
+	conflicts = cosmic-bg
+	source = git+https://github.com/pop-os/cosmic-bg.git
+	sha256sums = SKIP
+
+pkgname = cosmic-bg-git

@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-panel-git
-pkgver=0.1
+pkgver=r351.0742a54
 pkgrel=1
 pkgdesc='cosmic-panel'
 arch=('x86_64')

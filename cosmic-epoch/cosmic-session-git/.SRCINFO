@@ -1,0 +1,17 @@
+pkgbase = cosmic-session-git
+	pkgdesc = cosmic-session
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-session.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-session
+	conflicts = cosmic-session
+	source = git+https://github.com/pop-os/cosmic-session.git
+	sha256sums = SKIP
+
+pkgname = cosmic-session-git

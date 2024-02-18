@@ -1,0 +1,17 @@
+pkgbase = cosmic-randr-git
+	pkgdesc = cosmic-randr
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-randr.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-randr
+	conflicts = cosmic-randr
+	source = git+https://github.com/pop-os/cosmic-randr.git
+	sha256sums = SKIP
+
+pkgname = cosmic-randr-git

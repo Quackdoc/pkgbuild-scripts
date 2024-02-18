@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-workspaces-epoch-git
-pkgver=0.1
+pkgver=r161.7e81c9c
 pkgrel=1
 pkgdesc='cosmic-workspaces-epoch'
 arch=('x86_64')

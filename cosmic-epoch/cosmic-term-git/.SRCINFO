@@ -1,0 +1,17 @@
+pkgbase = cosmic-term-git
+	pkgdesc = cosmic-term
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-term.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-term
+	conflicts = cosmic-term
+	source = git+https://github.com/pop-os/cosmic-term.git
+	sha256sums = SKIP
+
+pkgname = cosmic-term-git

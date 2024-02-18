@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-screenshot-git
-pkgver=0.1
+pkgver=r7.98cafde
 pkgrel=1
 pkgdesc='cosmic-screenshot'
 arch=('x86_64')

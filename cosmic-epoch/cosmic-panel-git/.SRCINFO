@@ -1,0 +1,17 @@
+pkgbase = cosmic-panel-git
+	pkgdesc = cosmic-panel
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-panel.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-panel
+	conflicts = cosmic-panel
+	source = git+https://github.com/pop-os/cosmic-panel.git
+	sha256sums = SKIP
+
+pkgname = cosmic-panel-git

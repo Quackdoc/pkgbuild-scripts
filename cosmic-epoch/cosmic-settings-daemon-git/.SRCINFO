@@ -1,0 +1,17 @@
+pkgbase = cosmic-settings-daemon-git
+	pkgdesc = cosmic-settings-daemon
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-settings-daemon
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-settings-daemon
+	conflicts = cosmic-settings-daemon
+	source = git+https://github.com/pop-os/cosmic-settings-daemon.git
+	sha256sums = SKIP
+
+pkgname = cosmic-settings-daemon-git
