@@ -1,0 +1,17 @@
+pkgbase = cosmic-osd-git
+	pkgdesc = cosmic-osd
+	pkgver = r63.bc35c94
+	pkgrel = 1
+	url = https://github.com/pop-os/cosmic-osd.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-osd
+	conflicts = cosmic-osd
+	source = git+https://github.com/pop-os/cosmic-osd.git
+	sha256sums = SKIP
+
+pkgname = cosmic-osd-git

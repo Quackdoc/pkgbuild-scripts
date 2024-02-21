@@ -30,5 +30,5 @@ package(){
   cd $srcdir/cosmic-comp
   #just rootdir=$pkgdir install
   install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
-  install -Dm 655 config.ron -t "${pkgdir}/etc/cosmic-comp/config.ron"
+  install -Dm 655 config.ron -t "${pkgdir}/etc/cosmic-comp"
 }

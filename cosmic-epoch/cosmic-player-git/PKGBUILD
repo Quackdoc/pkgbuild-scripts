@@ -1,0 +1,32 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-player-git
+pkgver=r29.3235a04
+pkgrel=1
+pkgdesc='cosmic-player'
+arch=('x86_64')
+url='https://github.com/pop-os/cosmic-player.git'
+license=('GPLv3')
+depends=('ffmpeg')
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-player')
+conflicts=('cosmic-player')
+source=('git+https://github.com/pop-os/cosmic-player.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-player"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-player
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-player
+  just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}
