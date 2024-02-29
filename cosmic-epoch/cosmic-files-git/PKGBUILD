@@ -1,13 +1,13 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-files-git
-pkgver=r119.a24983c
+pkgver=r167.197398f
 pkgrel=1
 pkgdesc='cosmic-files'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-files.git'
 license=('GPLv3')
-depends=()
+depends=('dav1d')
 makedepends=('cargo' 'just' 'git' 'cmake')
 provides=('cosmic-files')
 conflicts=('cosmic-files')
@@ -22,7 +22,7 @@ pkgver() {
 
 build() {
     cd $srcdir/cosmic-files
-    cargo build --release
+    cargo build --release --features "image/avif-decoder"
 }
 
 package() {

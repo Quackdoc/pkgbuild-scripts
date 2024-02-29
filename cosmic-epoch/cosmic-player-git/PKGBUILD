@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-player-git
-pkgver=r29.3235a04
+pkgver=r37.4212524
 pkgrel=1
 pkgdesc='cosmic-player'
 arch=('x86_64')

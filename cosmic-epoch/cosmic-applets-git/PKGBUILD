@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-applets-git
-pkgver=r733.34c4bad
+pkgver=r786.a6f724e
 pkgrel=1
 pkgdesc='cosmic-applets'
 arch=('x86_64')

@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-term-git
-pkgver=r211.b8cbdb9
+pkgver=r239.36477e0
 pkgrel=1
 pkgdesc='cosmic-term'
 arch=('x86_64')
