@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-files-git
-pkgver=r167.197398f
+pkgver=r192.18e847a
 pkgrel=1
 pkgdesc='cosmic-files'
 arch=('x86_64')

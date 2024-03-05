@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-launcher-git
-pkgver=r179.fa00cf1
+pkgver=r182.c3e534f
 pkgrel=1
 pkgdesc='cosmic-launcher'
 arch=('x86_64')
