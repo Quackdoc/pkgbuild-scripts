@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmail.com>
 
 pkgname=cosmic-edit-git
-pkgver=r384.95e7da7
+pkgver=r388.fb151fd
 pkgrel=1
 pkgdesc='cosmic-edit'
 arch=('x86_64')

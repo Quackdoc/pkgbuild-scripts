@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-store-git
-pkgver=r23.fc1dd57
+pkgver=r65.eb431c2
 pkgrel=1
 pkgdesc='cosmic-store'
 arch=('x86_64')

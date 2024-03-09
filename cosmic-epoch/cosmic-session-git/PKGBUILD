@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-session-git
-pkgver=r123.8e73c0f
+pkgver=r128.05b6720
 pkgrel=1
 pkgdesc='cosmic-session'
 arch=('x86_64')

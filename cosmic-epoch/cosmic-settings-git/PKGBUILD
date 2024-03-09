@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-settings-git
-pkgver=r186.82ee8a6
+pkgver=r209.9175e7e
 pkgrel=1
 pkgdesc='cosmic-settings'
 arch=('x86_64')
