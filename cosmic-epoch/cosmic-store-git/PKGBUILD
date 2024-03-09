@@ -12,10 +12,8 @@ makedepends=('cargo' 'just' 'git' 'cmake' 'appstream')
 provides=('cosmic-store')
 conflicts=('cosmic-store')
 source=('git+https://github.com/pop-os/cosmic-store.git'
-        'git+https://github.com/jackpot51/appstream.git'
 )
-sha256sums=('SKIP'
-            'SKIP')
+sha256sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cosmic-store"
