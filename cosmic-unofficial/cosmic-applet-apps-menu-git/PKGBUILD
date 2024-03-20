@@ -1,0 +1,34 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-applet-apps-menu-git
+pkgver=r8.2700391
+pkgrel=1
+pkgdesc='cosmic-applet-apps-menu'
+arch=('x86_64')
+url='https://github.com/leb-kuchen/cosmic-applet-apps-menu.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-applet-apps-menu')
+conflicts=('cosmic-applet-apps-menu')
+source=('git+https://github.com/leb-kuchen/cosmic-applet-apps-menu.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-applet-apps-menu"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-applet-apps-menu
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-applet-apps-menu
+  install -Dm0755 ./target/release/cosmic-applet-apps-menu  "${pkgdir}/usr/bin/cosmic-applet-apps-menu"
+  install -Dm0644 ./data/dev.dominiccgeh.CosmicAppletAppsMenu.desktop "${pkgdir}/usr/share/applications/dev.dominiccgeh.CosmicAppletAppsMenu.desktop"
+  #just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}

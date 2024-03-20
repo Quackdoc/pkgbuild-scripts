@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-comp-git
-pkgver=r951.a204197
+pkgver=r961.c685440
 pkgrel=1
 pkgdesc='cosmic-comp'
 arch=('x86_64')

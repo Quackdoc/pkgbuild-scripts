@@ -1,0 +1,34 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-applet-places-status-indicator-git
+pkgver=r3.7e931c3
+pkgrel=1
+pkgdesc='cosmic-applet-places-status-indicator'
+arch=('x86_64')
+url='https://github.com/leb-kuchen/cosmic-applet-places-status-indicator.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-applet-places-status-indicator')
+conflicts=('cosmic-applet-places-status-indicator')
+source=('git+https://github.com/leb-kuchen/cosmic-applet-places-status-indicator.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-applet-places-status-indicator"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd $srcdir/cosmic-applet-places-status-indicator
+    cargo build --release
+}
+
+package() {
+  cd $srcdir/cosmic-applet-places-status-indicator
+  install -Dm0755 ./target/release/cosmic-applet-places-status-indicator  "${pkgdir}/usr/bin/cosmic-applet-places-status-indicator"
+  install -Dm0644 ./data/dev.dominiccgeh.CosmicAppletPlacesStatusIndicator.desktop "${pkgdir}/usr/share/applications/dev.dominiccgeh.CosmicAppletPlacesStatusIndicator.desktop"
+  #just rootdir=$pkgdir install
+  #make DESTDIR="$pkgdir" prefix="/usr" install
+}
