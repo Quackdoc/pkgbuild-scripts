@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-settings-daemon-git
-pkgver=r28.bbc8965
+pkgver=r36.ab44f59
 pkgrel=1
 pkgdesc='cosmic-settings-daemon'
 arch=('x86_64')
@@ -21,6 +21,7 @@ pkgver() {
 }
 
 build() {
+    export GEOCLUE_AGENT="/usr/lib/geoclue-2.0/demos/agent"
     cd $srcdir/cosmic-settings-daemon
     cargo build --release
 }
