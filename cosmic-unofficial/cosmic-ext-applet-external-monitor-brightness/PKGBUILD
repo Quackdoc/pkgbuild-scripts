@@ -1,0 +1,31 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-ext-applet-external-monitor-brightness
+pkgver=r30.13b212d
+pkgrel=1
+pkgdesc='cosmic-ext-applet-external-monitor-brightness'
+arch=('x86_64')
+url='https://github.com/maciekk64/cosmic-ext-applet-external-monitor-brightness'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-ext-applet-external-monitor-brightness')
+conflicts=('cosmic-ext-applet-external-monitor-brightness')
+source=('git+https://github.com/maciekk64/cosmic-ext-applet-external-monitor-brightness'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-ext-applet-external-monitor-brightness"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd "$srcdir/cosmic-ext-applet-external-monitor-brightness"
+    cargo build --release
+}
+
+package() {
+cd "$srcdir/cosmic-ext-applet-external-monitor-brightness"
+  just rootdir=$pkgdir install
+}

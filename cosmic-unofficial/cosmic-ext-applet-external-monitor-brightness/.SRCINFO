@@ -1,0 +1,17 @@
+pkgbase = cosmic-applet-places-status-indicator-git
+	pkgdesc = cosmic-applet-places-status-indicator
+	pkgver = r3.7e931c3
+	pkgrel = 1
+	url = https://github.com/leb-kuchen/cosmic-applet-places-status-indicator.git
+	arch = x86_64
+	license = GPLv3
+	makedepends = cargo
+	makedepends = just
+	makedepends = git
+	makedepends = cmake
+	provides = cosmic-applet-places-status-indicator
+	conflicts = cosmic-applet-places-status-indicator
+	source = git+https://github.com/leb-kuchen/cosmic-applet-places-status-indicator.git
+	sha256sums = SKIP
+
+pkgname = cosmic-applet-places-status-indicator-git
