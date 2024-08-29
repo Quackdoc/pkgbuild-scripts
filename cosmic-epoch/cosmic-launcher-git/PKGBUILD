@@ -7,7 +7,10 @@ pkgdesc='cosmic-launcher'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-launcher.git'
 license=('GPLv3')
-depends=()
+depends=(
+  cosmic-icons-git
+  pop-launcher-git
+)
 makedepends=('cargo' 'just' 'git' 'cmake')
 provides=('cosmic-launcher')
 conflicts=('cosmic-launcher')

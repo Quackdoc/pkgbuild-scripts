@@ -10,11 +10,11 @@ license=('GPLv3')
 depends=(
   bash
   cosmic-applets-git
-  cosmic-app-library-git
+  cosmic-applibrary-git
   cosmic-bg-git
   cosmic-comp-git
   cosmic-greeter-git
-  cosmic-icon-theme-git
+  cosmic-icons-git #cosmic-icon-theme
   cosmic-launcher-git
   cosmic-notifications-git
   cosmic-osd-git
@@ -23,7 +23,7 @@ depends=(
   cosmic-screenshot-git
   cosmic-settings-daemon-git
   cosmic-settings-git
-  cosmic-workspaces-git
+  cosmic-workspaces-epoch-git
   xdg-desktop-portal-cosmic-git
 )
 makedepends=('cargo' 'just' 'git' 'cmake')
