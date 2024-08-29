@@ -16,5 +16,5 @@ Depth = 4
 2. Install packages
 
 ```
-paru -S --rebuild cosmic-applibrary-git cosmic-bg-git cosmic-comp-git cosmic-edit-git cosmic-files-git cosmic-greeter-git cosmic-icons-git cosmic-launcher-git cosmic-notifications-git cosmic-osd-git cosmic-panel-git cosmic-randr-git cosmic-screenshot-git cosmic-session-git cosmic-settings-daemon-git cosmic-settings-git cosmic-store-git cosmic-term-git cosmic-workspaces-epoch-git xdg-desktop-portal-cosmic-git
+paru -S --rebuild cosmic-icons-git cosmic-applets-git cosmic-applibrary-git cosmic-bg-git cosmic-comp-git cosmic-edit-git cosmic-files-git cosmic-greeter-git cosmic-launcher-git cosmic-notifications-git cosmic-osd-git cosmic-panel-git cosmic-randr-git cosmic-screenshot-git cosmic-session-git cosmic-settings-daemon-git cosmic-settings-git cosmic-store-git cosmic-term-git cosmic-workspaces-epoch-git xdg-desktop-portal-cosmic-git 
 ```
