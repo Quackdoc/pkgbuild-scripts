@@ -7,7 +7,12 @@ pkgdesc='cosmic-applets'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applets.git'
 license=('GPLv3')
-depends=()
+depends=(
+  cosmic-icon-theme
+  dbus
+  libinput
+  libpulse
+)
 makedepends=('cargo' 'git' 'cmake' 'just')
 provides=('cosmic-applets')
 conflicts=('cosmic-applets')

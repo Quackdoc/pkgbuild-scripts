@@ -7,8 +7,34 @@ pkgdesc='cosmic-session'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-session.git'
 license=('GPLv3')
-depends=()
+depends=(
+  bash
+  cosmic-applets-git
+  cosmic-app-library-git
+  cosmic-bg-git
+  cosmic-comp-git
+  cosmic-greeter-git
+  cosmic-icon-theme-git
+  cosmic-launcher-git
+  cosmic-notifications-git
+  cosmic-osd-git
+  cosmic-panel-git
+  cosmic-randr-git
+  cosmic-screenshot-git
+  cosmic-settings-daemon-git
+  cosmic-settings-git
+  cosmic-workspaces-git
+  xdg-desktop-portal-cosmic-git
+)
 makedepends=('cargo' 'just' 'git' 'cmake')
+optdepends=(
+  'cosmic-files-git: COSMIC file manager'
+  'cosmic-store-git: COSMIC store'
+  'cosmic-term-git: COSMIC terminal'
+  'cosmic-edit-git: COSMIC text editor'
+  'cosmic-wallpapers: COSMIC wallpapers'
+)
+
 provides=('cosmic-session')
 conflicts=('cosmic-session')
 source=('git+https://github.com/pop-os/cosmic-session.git'

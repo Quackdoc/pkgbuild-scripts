@@ -7,7 +7,16 @@ pkgdesc='cosmic-comp'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-comp'
 license=('GPLv3')
-depends=()
+depends=(
+  fontconfig
+  libseat.so
+  libinput
+  libxcb
+  libxkbcommon
+  mesa
+  pixman
+  wayland
+)
 makedepends=('cargo' 'git' 'cmake')
 provides=('cosmic-comp')
 conflicts=('cosmic-comp')

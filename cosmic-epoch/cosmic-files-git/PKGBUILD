@@ -7,7 +7,7 @@ pkgdesc='cosmic-files'
 arch=('x86_64')
 url='https://github.com/pop-os/cosmic-files.git'
 license=('GPLv3')
-depends=('dav1d')
+depends=()
 makedepends=('cargo' 'just' 'git' 'cmake')
 provides=('cosmic-files')
 conflicts=('cosmic-files')
@@ -22,7 +22,7 @@ pkgver() {
 
 build() {
     cd $srcdir/cosmic-files
-    cargo build --release --features "image/avif-decoder" 
+    cargo build --release
 }
 
 package() {
