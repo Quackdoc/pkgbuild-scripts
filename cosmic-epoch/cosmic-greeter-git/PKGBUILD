@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-greeter-git
-pkgver=r71.df9f209
+pkgver=r160.55c02cd
 pkgrel=1
 pkgdesc='cosmic-greeter'
 arch=('x86_64')
@@ -38,5 +38,6 @@ package() {
   #install -Dm755 debian/cosmic-greeter-daemon.service -t "${pkgdir}"/usr/lib/systemd/system/
   install -Dm755 debian/cosmic-greeter.service -t "${pkgdir}"/usr/lib/systemd/system/
   install -Dm755 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
+  install -Dm644 debian/cosmic-greeter.pam -t "$pkgdir"/etc/pam.d/
   #make DESTDIR="$pkgdir" prefix="/usr" install
 }
