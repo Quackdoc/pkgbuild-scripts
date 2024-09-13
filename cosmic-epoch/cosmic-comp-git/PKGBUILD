@@ -40,4 +40,5 @@ package(){
   #just rootdir=$pkgdir install
   install -Dm 755 target/release/cosmic-comp -t "${pkgdir}/usr/bin"
   install -Dm 655 data/keybindings.ron "${pkgdir}/usr/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults"
+  install -Dm 655 data/tiling-exceptions.ron "${pkgdir}/usr/share/cosmic/com.system76.CosmicSettings.WindowRules/v1/tiling_exception_defaults"
 }
