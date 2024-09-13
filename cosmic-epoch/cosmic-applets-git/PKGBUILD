@@ -8,7 +8,7 @@ arch=('x86_64')
 url='https://github.com/pop-os/cosmic-applets.git'
 license=('GPLv3')
 depends=(
-  cosmic-icon-theme
+  #cosmic-icon-theme #constantly becomes not found for some reason
   dbus
   libinput
   libpulse

@@ -23,6 +23,7 @@ pkgver() {
 build() {
     cd $srcdir/cosmic-files
     cargo build --release
+    cargo build --release --manifest-path cosmic-files-applet/Cargo.toml
 }
 
 package() {
