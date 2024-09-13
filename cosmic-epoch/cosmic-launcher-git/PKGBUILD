@@ -9,7 +9,7 @@ url='https://github.com/pop-os/cosmic-launcher.git'
 license=('GPLv3')
 depends=(
   cosmic-icons-git
-  pop-launcher-git
+  pop-launcher
 )
 makedepends=('cargo' 'just' 'git' 'cmake')
 provides=('cosmic-launcher')
