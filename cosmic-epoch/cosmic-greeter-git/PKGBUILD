@@ -39,6 +39,6 @@ package() {
   install -Dm755 debian/cosmic-greeter.service -t "${pkgdir}"/usr/lib/systemd/system/
   install -Dm755 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
   #install -Dm644 debian/cosmic-greeter.pam "$pkgdir"/etc/pam.d/cosmic-greeter
-  ln -s /etc/pam.d/login "$pkgdir/etc/pam.d/cosmic-greeter
-  #make DESTDIR="$pkgdir" prefix="/usr" install
+  ln -s /etc/pam.d/login "$pkgdir/etc/pam.d/cosmic-greeter"
+  # make DESTDIR="$pkgdir" prefix="/usr" install
 }
