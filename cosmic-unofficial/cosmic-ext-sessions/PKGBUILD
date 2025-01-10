@@ -1,0 +1,35 @@
+#Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
+
+pkgname=cosmic-ext-extra-sessions-git
+pkgver=r2.6cc38de
+pkgrel=1
+pkgdesc='cosmic-ext-extra-sessions'
+arch=('x86_64')
+url='https://github.com/Drakulix/cosmic-ext-extra-sessions.git'
+license=('GPLv3')
+depends=()
+makedepends=('cargo' 'just' 'git' 'cmake')
+provides=('cosmic-ext-extra-sessions')
+conflicts=('cosmic-ext-extra-sessions')
+source=('git+https://github.com/Drakulix/cosmic-ext-extra-sessions.git'
+)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/cosmic-ext-extra-sessions"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    git submodule init
+    git submodule update
+    cd $srcdir/cosmic-ext-extra-sessions
+    just _build
+}
+
+package() {
+  cd $srcdir/cosmic-ext-extra-sessions
+  just rootdir=$pkgdir prefix=/usr install-niri
+  just rootdir=$pkgdir prefix=/usr install-sway
+  just rootdir=$pkgdir prefix=/usr install-miracle
+}
