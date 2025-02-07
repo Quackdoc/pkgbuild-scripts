@@ -1,0 +1,24 @@
+pkgname=libudev-zero-git
+pkgver=r230.bbeb7ad
+pkgrel=1
+pkgdesc="Daemonless replacement for libudev"
+arch=('x86_64')
+url="https://github.com/illiliti/libudev-zero"
+license=('ISC')
+makedepends=('git')
+source=("$pkgname::git+https://github.com/illiliti/libudev-zero")
+md5sums=('SKIP')
+pkgver() {
+  cd "$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build(){
+  cd "$srcdir/$pkgname"
+  make
+}
+
+package(){
+  cd "$srcdir/$pkgname"
+  make PREFIX="$pkgdir/usr" install
+}
