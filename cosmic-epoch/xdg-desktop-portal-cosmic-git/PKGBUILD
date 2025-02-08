@@ -9,7 +9,7 @@ url='https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 license=('GPLv3')
 depends=()
 makedepends=('cargo' 'just' 'git' 'cmake')
-provides=('xdg-desktop-portal-cosmic')
+provides=('xdg-desktop-portal-cosmic' 'xdg-desktop-portal-impl')
 conflicts=('xdg-desktop-portal-cosmic')
 source=('git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git'
 )
