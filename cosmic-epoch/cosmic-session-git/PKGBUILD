@@ -1,7 +1,7 @@
 #Maintainer : Mitchel Stewart <quackdoctech@gmaiil.com>
 
 pkgname=cosmic-session-git
-pkgver=r128.05b6720
+pkgver=r188.dd2e666
 pkgrel=1
 pkgdesc='cosmic-session'
 arch=('x86_64')
@@ -54,4 +54,5 @@ build() {
 package() {
   cd $srcdir/cosmic-session
   just rootdir=$pkgdir install
+  install -Dm644 data/dconf/profile/cosmic -t "$pkgdir/usr/share/dconf/profile/"
 }
