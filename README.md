@@ -1,3 +1,6 @@
+# Migrated to https://codeberg.org/Quackdoc/pkgbuild-scripts
+I hate the token system
+
 # pkgbuild-scripts
 various pkgbuildscripts
 
